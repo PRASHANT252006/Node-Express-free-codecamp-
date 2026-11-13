@@ -3,7 +3,7 @@ const notfound=(req,res)=>{
 }
 module.exports=notfound;
 
-// The rule again for next time: Middleware that only does work (logger, auth check): call next(). Middleware that ends the request (controller, notfound): send the response, no next()
+// The rule again for next() : Middleware that only does work (logger, auth check): call next(). Middleware that ends the request (controller, notfound): send the response, no next()
 
 // Middleware that only does work (logger, auth check): call next().
 // Middleware that ends the request (controller, notfound): send the response, no next()
