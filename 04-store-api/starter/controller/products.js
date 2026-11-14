@@ -5,6 +5,7 @@ const getAllProductsStatic = async (req, res) => {
 }
 
 const getAllProducts = async (req, res) => {
+ // https://localhost:3000/products?name=e&numericFilters=price>40,rating>=4&featured=false&company=ikea&fields=rating,price,name&sort=-name,price
   // console.log(req.query);
   const { featured, company, name, sort,fields,numericFilters} = req.query;
   const queryObject = {};
