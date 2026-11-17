@@ -1,10 +1,10 @@
-const Job=require('../models/job.js')
+const Job=require('../models/Job.js')
 const {StatusCodes}=require('http-status-codes')
 const {BadRequest}=require('../error')
 const NotFoundError=require('../error/not-found.js')
 const getAllJob = async (req, res) => {
     const jobs = await Job.find({ createdBy: req.user.id }).sort('createdAt');
-    res.status(StatusCodes.OK).json({ jobs, count: jobs.length },{size:job.length});
+    res.status(StatusCodes.OK).json({ jobs, count: jobs.length });
 };
 const createJob=async(req,res)=>
 {
@@ -37,7 +37,7 @@ const deleteJob = async (req, res) => {
     res.status(StatusCodes.OK).json({ msg: 'Job deleted' ,job});
 };
 const getjob=async(req,res)=>{
-    const {user}=req.user.id;
+    const user=req.user.id;
     const {id}=req.params;
 const job=await Job.findOne({_id:id,createdBy:user});
 if(!job)

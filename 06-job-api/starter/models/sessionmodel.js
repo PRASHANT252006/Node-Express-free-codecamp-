@@ -8,6 +8,11 @@ const sessionSchema = new mongoose.Schema({
     refreshToken: {
         type: String,
         required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        expires: 7 * 24 * 60 * 60
     }
 })
 
